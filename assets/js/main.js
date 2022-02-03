@@ -8,7 +8,7 @@ const showMenu = (e, t) => {
 };
 showMenu("nav-toggle", "nav-menu");
 const navLink = document.querySelectorAll(".nav__link");
-function linkAction() {
+const linkAction = () => {
     navLink.forEach((e) => e.classList.remove("active"))
     this.classList.add("active");
     document.getElementById("nav-menu").classList.remove("show");
@@ -35,3 +35,16 @@ sr.reveal(".skills__data", { interval: 200 });
 sr.reveal(".skills__img", { delay: 400 });
 sr.reveal(".work__img", { interval: 200 });
 sr.reveal(".contact__input", { interval: 200 });
+
+const zoomIn = () => {
+    let img = document.getElementById('map');
+    var curHeight = img.clientHeight;
+    if (curHeight < 463) img.style.height = `${curHeight + 40}px`;
+};
+
+const zoomOut = () => {
+    let img = document.getElementById('map');
+    var curHeight = img.clientHeight;
+    console.log(curHeight);
+    if (curHeight >= 208) img.style.height = `${curHeight - 40}px`;
+};
